@@ -14,11 +14,12 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Color.fromARGB(255, 60, 239, 37),
+          seedColor: const Color.fromARGB(255, 255, 2, 2),
           brightness: Brightness.dark,
         ),
       ),
       home: LoginPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -29,15 +30,23 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Text("Login"),
-          Text("Username"),
-          TextField(),
-          Text("Password"),
-          TextField(),
-          ElevatedButton(onPressed: () {}, child: Text("Login")),   
-        ],
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Login", style: TextStyle(fontSize: 50, color: Colors.amber)),
+            Text("Username"),
+            TextField(maxLength: 5),
+            Text("Password"),
+            TextField(obscureText: true),
+            ElevatedButton(
+              onPressed: () {
+                print("Button was cliked hah ha haha ahhah");
+              },
+              child: Text("Login"),
+            ),
+          ],
+        ),
       ),
     );
   }
