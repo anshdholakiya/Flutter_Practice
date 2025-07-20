@@ -12,18 +12,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(255, 255, 2, 2),
-          brightness: Brightness.dark,
-        ),
-      ),
       home: LoginPage(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
-
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -49,17 +42,45 @@ class LoginPage extends StatelessWidget {
       //     ],
       //   ),
       // ),
+
+      // body: Center(
+      //   child: Container(
+      //     height: double.infinity,
+      //     width: double.infinity,
+      //     margin: EdgeInsets.all(40),
+      //     padding: EdgeInsets.all(40),
+      //     decoration: BoxDecoration(
+      //       color: Colors.red,
+      //       borderRadius: BorderRadius.circular(20),
+      //     ),
+      //   ),
+      // ),
       body: Center(
         child: Container(
-          height: double.infinity,
+          color: Colors.blue,
           width: double.infinity,
-          margin: EdgeInsets.all(40),
-          padding: EdgeInsets.all(40),          
-          decoration: BoxDecoration(
-            color: Colors.red,
-            borderRadius: BorderRadius.circular(20),
-          ),                                     
-          
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Container(
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(25),
+                ),
+              ),
+              Container(
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(25),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
