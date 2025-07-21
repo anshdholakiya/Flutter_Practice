@@ -55,29 +55,50 @@ class LoginPage extends StatelessWidget {
       //     ),
       //   ),
       // ),
+       
       body: Center(
         child: Container(
           color: Colors.blue,
-          width: double.infinity,
+          // width: double.infinity,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.start,
+
+            crossAxisAlignment: CrossAxisAlignment.start,
+
+            // mainAxisSize: MainAxisSize.max, //* it take whole column height
+            mainAxisSize: MainAxisSize.min, //* it take need as
+            // crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Container(
-                height: 50,
-                width: 50,
+                height: 100,
+                width: 100,
                 decoration: BoxDecoration(
                   color: Colors.red,
-                  borderRadius: BorderRadius.circular(25),
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Center(child: Text("Container 1")),
+              ),
+              Container(
+                height: 250,
+                width: 250,
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Image.network(
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUsrKVvM5g2I-rxCjjqpHVQiYDPzNnPPdbv71u3gW-Z5Gk-S0StWlIQHXjVwfU_YsDM3TQ&s",
+                  width: 10,
+                  fit: BoxFit.contain,
                 ),
               ),
               Container(
-                height: 50,
-                width: 50,
+                height: 200,
+                width: 200,
                 decoration: BoxDecoration(
                   color: Colors.red,
-                  borderRadius: BorderRadius.circular(25),
+                  borderRadius: BorderRadius.circular(15),
                 ),
+                child: Image.asset("assets/images/ansh.png", fit: BoxFit.cover),
               ),
             ],
           ),
