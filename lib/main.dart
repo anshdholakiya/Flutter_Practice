@@ -24,6 +24,16 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Hey This is title"),
+        leading: Icon(
+          Icons.notification_add_sharp,
+          color: Colors.amberAccent,
+          size: 40, // we can change size of icon
+        ), //! this is how we can get icons
+        //* here leading means starting of appbar
+      ),
+
       // body: SafeArea(
       //   child: Column(
       //     mainAxisAlignment: MainAxisAlignment.center,
@@ -55,7 +65,6 @@ class LoginPage extends StatelessWidget {
       //     ),
       //   ),
       // ),
-       
       body: Center(
         child: Container(
           color: Colors.blue,
@@ -85,10 +94,28 @@ class LoginPage extends StatelessWidget {
                   color: Colors.red,
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: Image.network(
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUsrKVvM5g2I-rxCjjqpHVQiYDPzNnPPdbv71u3gW-Z5Gk-S0StWlIQHXjVwfU_YsDM3TQ&s",
-                  width: 10,
-                  fit: BoxFit.contain,
+                child: Padding(
+                  //* we can use Padding widget that only use for give padding also we can give  container also
+                  //! also Padding is less expensive than Container
+                  padding: EdgeInsets.all(80),
+                  child: Stack(
+                    children: [
+                      Image.network(
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUsrKVvM5g2I-rxCjjqpHVQiYDPzNnPPdbv71u3gW-Z5Gk-S0StWlIQHXjVwfU_YsDM3TQ&s",
+                        width: double.infinity,
+                      ),
+                      SizedBox(
+                        //! SizedBox only have two argumet height,width and child to bdhan ne hoy ne less expensive than Container
+                        width: 20,
+                        height: 50,
+                        child: Center(child: Text("Flutter")),
+                      ),
+                      ListTile(
+                        title: Text("List Tile"),
+                        tileColor: Colors.green,
+                      ), 
+                    ],
+                  ),
                 ),
               ),
               Container(
