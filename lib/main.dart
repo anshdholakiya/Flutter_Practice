@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_practice/views/widget_tree.dart'; 
+import 'package:flutter_app_practice/views/widget_tree.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ void main() {
   statefull --> can refresh screen
 */
 
-String title = "ansh hareshbhai dholakiya";  
+String title = "ansh hareshbhai dholakiya";
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -32,7 +32,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
- 
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -41,10 +40,10 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {  
-  int currentIndex = 0; 
+class _MyHomePageState extends State<MyHomePage> {
+  int currentIndex = 0;
   @override
-  Widget build(BuildContext context) {  
+  Widget build(BuildContext context) {
     return WidgetTree();
   }
 }

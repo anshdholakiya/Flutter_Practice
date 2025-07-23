@@ -305,3 +305,9 @@ class _MyHomePageState extends State<MyHomePage> {
 * we are spliting widget so we not need to referesh all the widget like main widget 
 * so alway make separte widget in widget folder with widget name 
 * file name small without space
+
+# List of Widgets
+
+```dart
+ List<Widget> pages = [HomePage(), ProfilePage()];```
+* from this we can make list of widgets
