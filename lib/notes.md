@@ -309,5 +309,313 @@ class _MyHomePageState extends State<MyHomePage> {
 # List of Widgets
 
 ```dart
- List<Widget> pages = [HomePage(), ProfilePage()];```
+ List<Widget> pages = [HomePage(), ProfilePage()];
+ ```
 * from this we can make list of widgets
+* here at Widget you can make list of Widget
+
+
+
+# value notifier 
+*  valuenotifier  : hold the data
+* valueLisetenableBuilder  : listen to the data  (don't need to setState)
+** value notifier is widget it only wrap in widget **
+
+
+# Text Input 
+
+```dart
+import 'package:flutter/material.dart';
+
+class ProfilePage extends StatefulWidget {
+  const ProfilePage({super.key});
+
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  TextEditingController controller = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        children: [
+          TextField(
+            controller: controller,
+            decoration: InputDecoration(border: OutlineInputBorder()),
+            onEditingComplete: () {
+              setState(() {});
+            },
+          ),
+          Text(controller.text),
+        ],
+      ),
+    );
+  }
+}
+
+```
+
+# Checkbox CheckboxTile Switch Image cliking animation dropDown_button 
+
+```dart
+import 'package:flutter/material.dart';
+
+class ProfilePage extends StatefulWidget {
+  const ProfilePage({super.key});
+
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  TextEditingController controller = TextEditingController();
+  bool? isChecked = false; //! nullable
+  bool isSwitched = false; //! not-nullable
+  double sliderValue = 0.0;
+  String? menuItem = "e1";
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            DropdownButton(
+              value: menuItem,
+              items: [
+                DropdownMenuItem(value: "e1", child: Text("Element 1")),
+                DropdownMenuItem(value: "e2", child: Text("Element 2")),
+                DropdownMenuItem(value: "e3", child: Text("Element 3")),
+              ],
+              onChanged: (String? value) {
+                setState(() {
+                  menuItem = value;
+                });
+              },
+            ),
+            TextField(
+              controller: controller,
+              decoration: InputDecoration(border: OutlineInputBorder()),
+              onEditingComplete: () => setState(() {}),
+            ),
+            Text(controller.text),
+            Checkbox(
+              tristate: true, //! three state nothing ,checked , unchecked
+              value: isChecked,
+              onChanged: (bool? value) {
+                setState(() {
+                  isChecked = value;
+                });
+              },
+            ),
+            CheckboxListTile(
+              tristate: true,
+              title: Text("Click Me"),
+              value: isChecked,
+              onChanged: (bool? value) {
+                setState(() {
+                  isChecked = value;
+                });
+              },
+            ),
+            Switch.adaptive(
+              value: isSwitched,
+              onChanged: (bool value) {
+                setState(() {
+                  isSwitched = value;
+                });
+              },
+            ),
+            SwitchListTile.adaptive(
+              //! adaptive is use for iphone mobile adaptive
+              title: Text("Switch Me"),
+              value: isSwitched,
+              onChanged: (value) {
+                setState(() {
+                  isSwitched = value;
+                });
+              },
+            ),
+
+            Slider.adaptive(
+              max: 10.0,
+              divisions: 10,
+              value: sliderValue,
+              onChanged: (double value) {
+                //! if you want than mentain type for your simplisity
+                setState(() {
+                  sliderValue = value;
+                  // print(value);
+                });
+              },
+            ),
+
+            // GestureDetector(  //! Detect gesture on it or tapping or clicking
+            //   onTap: () {
+            //     print("Image tapeed");
+            //   },
+            //   child: Image.asset('assets/images/ansh.png'),
+            // ),
+
+            // Option of GestureDetector
+            InkWell(
+              //! good animation for clicking on image
+              splashColor: Colors.teal,
+              onTap: () {
+                print("Image tapeed");
+              },
+              child: Container(
+                height: 100,
+                width: double.infinity,
+                color: Colors.white12,
+              ),
+            ),
+
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.teal,
+                foregroundColor: Colors.white,
+              ),
+              child: Text("Click Me"),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(),
+              child: Text("Click Me"),
+            ),
+            FilledButton(
+              onPressed: () {},
+              style: FilledButton.styleFrom(),
+              child: Text("Click Me"),
+            ),
+            TextButton(
+              onPressed: () {},
+              style: TextButton.styleFrom(),
+              child: Text("Click Me"),
+            ),
+            OutlinedButton(
+              onPressed: () {},
+              style: TextButton.styleFrom(),
+              child: Text("Click Me"),
+            ),
+            CloseButton(),
+            BackButton(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+```
+
+* this is give me more widget like button checkbox drop down and so more
+
+
+# scrolling the appliation
+
+* for scrolling wrap whole with 
+```dart
+SingleChildScrollView()
+```
+
+
+# Routing Navigator.push
+
+```dart
+IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return SettingPage();
+                  },
+                ),
+              );
+            },
+            icon: Icon(Icons.settings),
+          ),
+```
+* here have to go navigator push than materialpageroute and return which page need to navigate 
+
+## for navigate the page use appbar and wrap with scafold
+
+# Navigator.pop uses
+
+## it will pop to last page replacment of back button automatically genrated by routing
+```dart
+return Scaffold(
+      appBar: AppBar(
+        leading: BackButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: Text("Setting Page"),
+        // automaticallyImplyLeading:
+        //     false, //! in appbar flutter automatically provide the back button on the leading we can disable it with this command
+      ),
+```
+
+
+# Push Replacement
+
+#### With Push Replacement current page is repalce by navigate page in simple way we can't go back to previous page use for Login page
+
+```dart
+IconButton(
+            onPressed: () {
+              Navigator.pushReplacement(  //! it replace existing page so we can't go back 
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return SettingPage();
+                  },
+                ),
+              );
+            },
+            icon: Icon(Icons.settings),
+          ),
+```
+
+
+# Send Data threw page (Without Notifier) threw argument
+ 
+
+- `this.title` → assigns constructor value to class variable  
+- `final` → value can’t be changed after set  
+- `required` → must pass this value when creating the widget  
+
+## ✅ Example
+
+```dart
+class SettingPage extends StatefulWidget {
+  final String title;
+
+  const SettingPage({required this.title});
+}
+```
+## use like this
+```dart
+Navigator.push(
+  context,
+  MaterialPageRoute(
+    builder: (context) => SettingPage(title: "Settings"),
+  ),
+);
+
+```
+
+
+# clean ui widget
+
+* just login page with clean ui with pushReplacment use
+
+# hero widget
+
