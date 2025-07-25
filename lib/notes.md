@@ -678,10 +678,36 @@ ElevatedButton(
 
 
 
-# Alert Dialog
+# Alert Dialog or showDialog 
 
+
+### it syntax is little hard but can do it with action list we can make button to close it
 ```dart
-
+ElevatedButton(
+                onPressed: () {
+                  showDialog(
+                    //! showdialog widget
+                    context: context,
+                    builder: (context) {
+                      // return AboutDialog();  //! just open flutter about dialog
+                      return AlertDialog(
+                        //! show alertDialog widget
+                        title: Text("Alert Title"),
+                        content: Text("alert content"),
+                        actions: [
+                          //! in action we can make button for close button
+                          CloseButton(),
+                        ],
+                      );
+                    },
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.teal,
+                  foregroundColor: Colors.white,
+                ),
+                child: Text("Open Diaolog"),
+              ),
 ```
 
 
@@ -689,6 +715,82 @@ ElevatedButton(
 
 
 
+
+# Divider Vertical | and horizontal ----   
+
+### this divider is widget
+```dart
+
+Divider(color: Colors.teal, thickness: 5.0, endIndent: 200.0),  //! horizontal divder with property
+              SizedBox(
+                height: 50.0,
+                child: VerticalDivider(color: Colors.green),  //! vertical divider
+              ),
+```
+
+
+
+
+# Card widget
+ 
+#### it is card widget to make attractive card or anything you want 
+```dart
+ Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(vertical: 10.0),
+            child: Card(
+              child: Padding(
+                padding: EdgeInsets.all(20.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Basic Layouting"),
+                    Text("The Description of This"),
+                  ],
+                ),
+              ),
+            ),
+          ),
+```
+ 
+# Resuble Text Style or any other style
+
+### we can make resusable text style or any style with put in other file and use like 
+
+```dart
+import 'package:flutter/material.dart';
+
+//! we can make our style so we can reuse that in the our project
+
+class KTextStyle {
+  static const TextStyle titleTealText = TextStyle(
+    color: Colors.teal,
+    fontSize: 20.21,
+    fontWeight: FontWeight.bold,
+    letterSpacing: 10.0,
+  );
+
+  static const TextStyle descriptionText = TextStyle(fontSize: 13.21);
+}
+
+```
+
+* can be use with like 
+```dart
+children: [
+                    Text("Basic Layouting", style: KTextStyle.titleTealText),
+                    Text(
+                      "The Description of This",
+                      style: KTextStyle.descriptionText,
+                    ),
+```
+ 
+# Packages
+
+
+
+
+
 #
 
 
@@ -699,12 +801,7 @@ ElevatedButton(
 
 
 
-
-
 #
-
-
-
 
 
 

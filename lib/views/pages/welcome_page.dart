@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_practice/views/widget_tree.dart';
 import 'package:flutter_app_practice/views/widgets/hero_widget.dart';
+import 'package:lottie/lottie.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -13,6 +14,10 @@ class WelcomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // Lottie.asset('assets/lotties/Home.json'),
+            // Lottie.network(
+            //   'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/A.json',
+            // ),
             HeroWidget(),
             FilledButton(
               onPressed: () {

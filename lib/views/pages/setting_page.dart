@@ -58,6 +58,17 @@ class _SettingPageState extends State<SettingPage> {
                 ),
                 child: Text("Open Snack Bar"),
               ),
+              Divider(
+                color: Colors.teal,
+                thickness: 5.0,
+                endIndent: 200.0,
+              ), //! horizontal divder with property
+              SizedBox(
+                height: 50.0,
+                child: VerticalDivider(
+                  color: Colors.green,
+                ), //! vertical divider
+              ),
               ElevatedButton(
                 onPressed: () {
                   showDialog(
@@ -81,7 +92,7 @@ class _SettingPageState extends State<SettingPage> {
                   backgroundColor: Colors.teal,
                   foregroundColor: Colors.white,
                 ),
-                child: Text("Open Alert Diaolog"),
+                child: Text("Open Diaolog"),
               ),
               DropdownButton(
                 value: menuItem,
@@ -98,7 +109,7 @@ class _SettingPageState extends State<SettingPage> {
               ),
               TextField(
                 controller: controller,
-                decoration: InputDecoration(border: OutlineInputBorder()),
+                decoration: InputDecoration(border: OutlineInputBorder()  ),
                 onEditingComplete: () => setState(() {}),
               ),
               Text(controller.text),
