@@ -617,5 +617,96 @@ Navigator.push(
 
 * just login page with clean ui with pushReplacment use
 
-# hero widget
+# Image custimaztiom
 
+#### we can also give image color or any type of style
+```dart
+child: Image.asset(
+          'assets/images/ansh.png',
+          color: Colors.teal,
+          colorBlendMode: BlendMode.darken,
+        ),
+```
+
+# hero widget 
+### hero widget is used to make smooth transistion between changin screen
+
+```dart
+import 'package:flutter/material.dart';
+
+class HeroWidget extends StatelessWidget {
+  const HeroWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Hero(
+      tag: "hero1",
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20.0),
+        child: Image.asset('assets/images/ansh.png'),
+      ),
+    );
+  }
+} 
+```
+
+
+
+# Snack bar Widget
+
+### snack bar is like give me some pop message to the use like feedback form or etc
+
+```dart 
+ElevatedButton(
+                onPressed: () {  //! an floating snack bar with duration
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(   //! for snack bar 
+                      duration: Duration(seconds: 4),
+                      behavior: SnackBarBehavior.floating,
+                      content: Text("SnackBar"),
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.teal,
+                  foregroundColor: Colors.white,
+                ),
+                child: Text("Open Snack Bar"),
+              ),
+```
+
+
+
+
+# Alert Dialog
+
+```dart
+
+```
+
+
+
+
+
+
+#
+
+
+
+
+#
+
+
+
+
+
+
+#
+
+
+
+
+
+
+
+#

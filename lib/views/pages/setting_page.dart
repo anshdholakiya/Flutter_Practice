@@ -40,6 +40,49 @@ class _SettingPageState extends State<SettingPage> {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
+              ElevatedButton(
+                onPressed: () {
+                  //! an floating snack bar with duration
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      //! for snack bar
+                      duration: Duration(seconds: 4),
+                      behavior: SnackBarBehavior.floating,
+                      content: Text("SnackBar"),
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.teal,
+                  foregroundColor: Colors.white,
+                ),
+                child: Text("Open Snack Bar"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  showDialog(
+                    //! showdialog widget
+                    context: context,
+                    builder: (context) {
+                      // return AboutDialog();  //! just open flutter about dialog
+                      return AlertDialog(
+                        //! show alertDialog widget
+                        title: Text("Alert Title"),
+                        content: Text("alert content"),
+                        actions: [
+                          //! in action we can make button for close button
+                          CloseButton(),
+                        ],
+                      );
+                    },
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.teal,
+                  foregroundColor: Colors.white,
+                ),
+                child: Text("Open Alert Diaolog"),
+              ),
               DropdownButton(
                 value: menuItem,
                 items: [
@@ -131,14 +174,6 @@ class _SettingPageState extends State<SettingPage> {
                 ),
               ),
 
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.teal,
-                  foregroundColor: Colors.white,
-                ),
-                child: Text("Click Me"),
-              ),
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(),
