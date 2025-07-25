@@ -785,8 +785,62 @@ children: [
                     ),
 ```
  
-# Packages
+# Packages Lottie
 
+### we can use lotties package for giving good animation to our application 
+
+### Read the pubdev documentation for [lottie](https://pub.dev/packages/lottie)
+
+```dart
+Lottie.asset('assets/lotties/Home.json'),
+```
+
+#### change in pubspec.yaml   
+
+# Fltted Box
+
+### it fit the text or anything in screen according to the value
+```dart
+
+FittedBox(
+                //! automatically fit the in screen
+                child: Text(
+                  "Flutter App",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 500.0,
+                    letterSpacing: 50.0,
+                  ),
+                ),
+              ),
+```
+
+
+# minimum size and maximum size of button   
+
+#### below is filledbutton that we can use style property with his own name and make minimum or maximum size
+
+```dart
+FilledButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return WidgetTree();
+                      },
+                    ),
+                  );
+                },
+                style: FilledButton.styleFrom(
+                  minimumSize: Size(double.infinity, 40),
+                ),
+                child: Text(
+                  "Get Started",
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                ),
+              ),
+```
 
 
 
@@ -801,7 +855,88 @@ children: [
 
 
 
+
 #
+
+
+
+
+
+
+
+
+
+#
+
+
+
+
+
+
+
+
+
+
+
+#
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
+
+
+
+
+
+
+
+
+
+
+
 
 
 
